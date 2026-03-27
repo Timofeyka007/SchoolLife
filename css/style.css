@@ -656,12 +656,12 @@ footer a {
         justify-content: center;
         gap: 14px 18px;
         min-height: unset;
-        padding: 94px 14px 18px;
+        padding: 108px 14px 18px;
     }
 
     .nav-item:first-child {
         position: absolute;
-        top: -2px;
+        top: -12px;
         left: 50%;
         transform: translateX(-50%);
         width: auto;
@@ -691,11 +691,15 @@ footer a {
         max-width: 440px;
         margin-left: auto;
         margin-right: auto;
+        justify-items: center;
     }
 
     .interesting li {
+        width: min(100%, 360px);
         padding: 18px 16px 20px;
         min-height: 0;
+        align-items: flex-start;
+        text-align: left;
     }
 
     .conatiner {
@@ -801,7 +805,7 @@ footer a {
 
 @media (max-width: 420px) {
     .nav-list {
-        padding-top: 84px;
+        padding-top: 98px;
     }
 
     .nav-item img {
@@ -831,7 +835,7 @@ footer a {
 @media (max-width: 360px) {
     .nav-list {
         gap: 10px 14px;
-        padding-top: 78px;
+        padding-top: 92px;
     }
 
     .nav-item {
