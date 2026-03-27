@@ -687,15 +687,15 @@ footer a {
         margin-top: 14px;
     }
 
+    .interesting ul {
+        max-width: 440px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
     .interesting li {
         padding: 18px 16px 20px;
         min-height: 0;
-        align-items: center;
-        text-align: center;
-    }
-
-    .interesting a {
-        text-align: center;
     }
 
     .conatiner {
@@ -752,13 +752,17 @@ footer a {
         font-size: clamp(1.5rem, 8vw, 2rem);
     }
 
+    .main-teaser {
+        display: block;
+    }
+
     .main-teaser img {
         display: block;
         width: 100%;
-        height: auto;
-        min-height: 0;
-        aspect-ratio: 4 / 3;
+        height: 220px;
+        min-height: 220px;
         object-fit: cover;
+        border-bottom: 1.5px solid rgba(42, 53, 80, 0.34);
     }
 
     .main-teaser p:first-of-type,
@@ -817,6 +821,11 @@ footer a {
     .feedback textarea {
         min-height: 170px;
     }
+
+    .main-teaser img {
+        height: 200px;
+        min-height: 200px;
+    }
 }
 
 @media (max-width: 360px) {
@@ -846,7 +855,8 @@ footer a {
     }
 
     .main-teaser img {
-        aspect-ratio: 1 / 1;
+        height: 180px;
+        min-height: 180px;
     }
 
     .feedback input[type="submit"] {
