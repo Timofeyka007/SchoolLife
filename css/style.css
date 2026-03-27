@@ -685,17 +685,20 @@ footer a {
 
     .interesting {
         margin-top: 14px;
+        padding-left: 2px;
+        padding-right: 2px;
     }
 
     .interesting ul {
-        max-width: 440px;
+        width: 100%;
+        max-width: 360px;
         margin-left: auto;
         margin-right: auto;
         justify-items: center;
     }
 
     .interesting li {
-        width: min(100%, 360px);
+        width: 100%;
         padding: 18px 16px 20px;
         min-height: 0;
         align-items: flex-start;
