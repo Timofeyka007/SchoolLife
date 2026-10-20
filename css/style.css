@@ -406,7 +406,6 @@ footer section {
 .main-teaser img:last-of-type {
     grid-column: 1;
     grid-row: 3 / 5;
-    height: 100%;
     min-height: 440px;
     max-height: none;
     align-self: stretch;
