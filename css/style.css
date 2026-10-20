@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@400;500;600;700&family=Oswald:wght@400;500;600&display=swap');
+@font-face { font-family: 'Oswald'; font-display: swap; }
 
 :root {
     --page-bg: #c9d5f6;
@@ -9,6 +10,28 @@
     --ink: #171c2b;
     --muted: #49546f;
     --line: #2a3550;
+}
+
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap; /* <-- ДОДАТИ СЮДИ */
+  src: url(https://gstatic.com) format('truetype');
+}
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap; /* <-- ДОДАТИ СЮДИ */
+  src: url(https://gstatic.com) format('truetype');
+}
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap; /* <-- ДОДАТИ СЮДИ */
+  src: url(https://gstatic.com) format('truetype');
 }
 
 html {
@@ -609,10 +632,14 @@ footer a {
         border-right: 0;
     }
 
-    .main-teaser img {
-        height: clamp(220px, 42vw, 320px);
-        min-height: 220px;
-        max-height: none;
+    /* ФІКС: Повністю скидаємо дескриптурну висоту 440px для ОБОХ картинок */
+    .main-teaser img:first-of-type,
+    .main-teaser img:last-of-type {
+        height: clamp(220px, 42vw, 320px) !important;
+        min-height: 220px !important;
+        max-height: none !important;
+        aspect-ratio: 16 / 9; /* Резервує місце на екрані до завантаження файлу */
+        object-fit: cover;
     }
 
     .main-teaser p:first-of-type,
@@ -673,6 +700,9 @@ footer a {
         transform: translateX(-50%);
         width: auto;
         justify-content: center;
+        /* ФІКС: Задаємо фіксовану пропорцію для контейнера логотипа */
+        aspect-ratio: 1 / 1;
+        min-width: min(180px, 48vw);
     }
 
     .nav-item {
@@ -682,7 +712,8 @@ footer a {
 
     .nav-item img {
         width: min(180px, 48vw);
-        height: min(180px, 48vw);
+        height: min(180px, 48vw) !important;
+        object-fit: contain;
     }
 
     .nav-item a {
@@ -766,15 +797,20 @@ footer a {
         font-size: clamp(1.5rem, 8vw, 2rem);
     }
 
+    /* ФІКС: Замість display: block залишаємо grid для стабільності структури сітки */
     .main-teaser {
-        display: block;
+        display: grid;
+        grid-template-columns: 1fr;
     }
 
-    .main-teaser img {
+    /* ФІКС: Примусово фіксуємо висоту обох картинок на 220px без стрибків */
+    .main-teaser img:first-of-type,
+    .main-teaser img:last-of-type {
         display: block;
         width: 100%;
-        height: 220px;
-        min-height: 220px;
+        height: 220px !important;
+        min-height: 220px !important;
+        aspect-ratio: 16 / 9;
         object-fit: cover;
         border-bottom: 1.5px solid rgba(42, 53, 80, 0.34);
     }
@@ -818,9 +854,13 @@ footer a {
         padding-top: 98px;
     }
 
+    .nav-item:first-child {
+        min-width: min(150px, 46vw);
+    }
+
     .nav-item img {
         width: min(150px, 46vw);
-        height: min(150px, 46vw);
+        height: min(150px, 46vw) !important;
     }
 
     .block h1::before,
@@ -836,9 +876,11 @@ footer a {
         min-height: 170px;
     }
 
-    .main-teaser img {
-        height: 200px;
-        min-height: 200px;
+    /* ФІКС: Збиваємо дескриптурні 440px до стабільних мобільних 200px */
+    .main-teaser img:first-of-type,
+    .main-teaser img:last-of-type {
+        height: 200px !important;
+        min-height: 200px !important;
     }
 }
 
@@ -868,9 +910,11 @@ footer a {
         font-size: 1.35rem;
     }
 
-    .main-teaser img {
-        height: 180px;
-        min-height: 180px;
+    /* ФІКС: Збиваємо дескриптурні 440px до стабільних мобільних 180px */
+    .main-teaser img:first-of-type,
+    .main-teaser img:last-of-type {
+        height: 180px !important;
+        min-height: 180px !important;
     }
 
     .feedback input[type="submit"] {
